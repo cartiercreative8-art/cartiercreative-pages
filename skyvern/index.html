@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="25 verified operations owners across insurance brokers and freight brokers, with the evidence behind each row. Prepared for Skyvern by Carter Birky.">
+<meta property="og:title" content="Skyvern Target Review">
+<meta property="og:description" content="25 ops owners, verified by hand. 24 of 25 addresses confirmed, three traps caught.">
+<meta property="og:type" content="website">
+<style>
+  html,body{margin:0}
+  body{font:14px system-ui,-apple-system,sans-serif}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+<title>Skyvern Target Review</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a verification console. Summary, then the three findings that
+   justify the work, then the reviewable queue. Dark-first, because it is
+   an instrument rather than a document. */
+:root {
+  --bg:#0d151c; --panel:#121d26; --panel2:#16222d; --line:#223240;
+  --ink:#e8eef3; --ink2:#9fb2c0; --ink3:#6b8092;
+  --accent:#e2652f; --accent-dim:#8f3510;
+  --ok:#4fb783; --warn:#e0a33a; --bad:#e06060;
+  --sans:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg:#f3f6f8; --panel:#ffffff; --panel2:#f7fAfc; --line:#dde5ec;
+    --ink:#13202b; --ink2:#4a5b6b; --ink3:#7c8d9c;
+    --accent:#c04a1c; --accent-dim:#e9d4c8;
+    --ok:#1f7a52; --warn:#9a6b10; --bad:#b03c3c;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg:#f3f6f8; --panel:#ffffff; --panel2:#f7fAfc; --line:#dde5ec;
+  --ink:#13202b; --ink2:#4a5b6b; --ink3:#7c8d9c;
+  --accent:#c04a1c; --accent-dim:#e9d4c8;
+  --ok:#1f7a52; --warn:#9a6b10; --bad:#b03c3c;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.55;margin:0}
+.wrap{max-width:980px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:40px 72px}
+h1,h2,h3{text-wrap:balance;margin:0}
+code{font-family:var(--mono);font-size:.92em}
+
+/* ---- masthead ---- */
+.mast{border-bottom:1px solid var(--line);padding-bottom:26px;margin-bottom:30px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+h1{font-size:clamp(28px,5vw,40px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.sub{color:var(--ink2);margin:12px 0 0;max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:20px;
+  font-family:var(--mono);font-size:12.5px;color:var(--ink3)}
+.meta b{color:var(--ink2);font-weight:500}
+
+/* ---- summary strip ---- */
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;
+  overflow:hidden;margin-bottom:34px}
+.cell{background:var(--panel);padding:16px 18px}
+.cell dt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink3);margin:0 0 7px}
+.cell dd{margin:0;font-size:27px;font-weight:600;letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums}
+.cell dd small{font-size:13px;font-weight:400;color:var(--ink3);margin-left:5px}
+.cell--flag dd{color:var(--warn)}
+.cell--catch dd{color:var(--accent)}
+
+/* ---- findings ---- */
+.sec-h{display:flex;align-items:baseline;gap:14px;margin:0 0 6px}
+.sec-h h2{font-size:20px;font-weight:600;letter-spacing:-.01em}
+.sec-h span{font-family:var(--mono);font-size:12px;color:var(--ink3)}
+.sec-note{color:var(--ink2);margin:0 0 20px;max-width:64ch}
+.finds{display:grid;gap:14px;margin-bottom:44px}
+.find{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:20px 22px}
+.find header{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+.find__n{font-family:var(--mono);font-size:12px;color:var(--accent);
+  border:1px solid var(--accent-dim);border-radius:5px;padding:3px 7px;flex:none;
+  margin-top:2px}
+.find h3{font-size:16.5px;font-weight:600;letter-spacing:-.01em}
+.find__co{font-family:var(--mono);font-size:12px;color:var(--ink3);margin:4px 0 0}
+.find p{margin:0 0 12px;color:var(--ink2);max-width:66ch}
+.find__close{color:var(--ink2);border-top:1px solid var(--line);padding-top:12px;
+  margin-bottom:0 !important}
+.pfs{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:6px}
+.pf{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;
+  background:var(--panel2);border-radius:7px;padding:8px 12px;
+  border-left:2px solid var(--line);min-width:0}
+.pf code{color:var(--ink);word-break:break-all;min-width:0}
+.pf span{font-size:12.5px;color:var(--ink3);font-family:var(--mono)}
+.pf--good{border-left-color:var(--ok)}
+.pf--good span{color:var(--ok)}
+.pf--bad{border-left-color:var(--bad)}
+.pf--bad span{color:var(--bad)}
+
+/* ---- controls ---- */
+.ctrls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.03em;
+  background:var(--panel);color:var(--ink2);border:1px solid var(--line);
+  border-radius:999px;padding:6px 13px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+  color:#fff}
+.chip:focus-visible,input:focus-visible,.row__btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#q{flex:1;min-width:180px;background:var(--panel);color:var(--ink);
+  border:1px solid var(--line);border-radius:999px;padding:7px 15px;
+  font-family:var(--mono);font-size:12.5px}
+#q::placeholder{color:var(--ink3)}
+.count{font-family:var(--mono);font-size:12px;color:var(--ink3);margin-bottom:12px}
+
+/* ---- queue ---- */
+.queue{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+  overflow:hidden}
+.row__btn{all:unset;display:grid;grid-template-columns:1fr auto;gap:10px 16px;
+  width:100%;box-sizing:border-box;padding:14px 16px;cursor:pointer;align-items:center}
+.row__btn:hover{background:var(--panel2)}
+.row__main{min-width:0}
+.row__co{font-weight:600;letter-spacing:-.01em;display:flex;align-items:center;
+  gap:9px;flex-wrap:wrap}
+.vert{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink3);border:1px solid var(--line);
+  border-radius:4px;padding:1px 6px;font-weight:400}
+.row__who{color:var(--ink2);font-size:14px;margin-top:3px}
+.row__who b{color:var(--ink);font-weight:500}
+.row__mail{font-family:var(--mono);font-size:12.5px;color:var(--accent);
+  margin-top:5px;word-break:break-all}
+.row__side{display:flex;align-items:center;gap:10px;flex:none}
+.pill{font-family:var(--mono);font-size:11px;letter-spacing:.04em;
+  border-radius:999px;padding:3px 10px;white-space:nowrap;border:1px solid}
+.pill--ok{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 42%,transparent)}
+.pill--ok2{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 28%,transparent);
+  opacity:.82}
+.pill--warn{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 48%,transparent)}
+.caret{color:var(--ink3);font-family:var(--mono);font-size:13px;transition:transform .16s}
+.row[open] .caret{transform:rotate(90deg)}
+.row__body{padding:0 16px 16px;border-top:1px solid var(--line);margin-top:0}
+.row__body dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:14px 0 0;
+  font-size:13.5px}
+.row__body dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink3);padding-top:2px}
+.row__body dd{margin:0;color:var(--ink2);min-width:0}
+.row__body dd b{color:var(--ink);font-weight:500}
+.note{margin-top:14px;padding-top:13px;border-top:1px solid var(--line);
+  color:var(--ink2);font-size:13.5px;line-height:1.6;max-width:72ch}
+.row__body dd.tier{font-family:var(--mono);font-size:11px;letter-spacing:.05em}
+.row__body dd.tier--top{color:var(--accent)}
+.row__body dd.tier--good{color:var(--ok)}
+.row__body dd.tier--soft{color:var(--warn)}
+.empty{color:var(--ink3);font-family:var(--mono);font-size:13px;padding:26px 0}
+
+/* ---- method + foot ---- */
+.method{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:22px;margin-top:40px}
+.method h2{font-size:17px;font-weight:600;margin-bottom:12px}
+.method ol{margin:0;padding-left:20px;color:var(--ink2);display:grid;gap:8px;
+  max-width:68ch}
+.method li::marker{color:var(--accent);font-family:var(--mono);font-size:12px}
+foot,.foot{display:block;margin-top:34px;padding-top:20px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:12.5px;color:var(--ink3)}
+.foot b{color:var(--ink2);font-weight:500}
+@media (max-width:560px){
+  .row__btn{grid-template-columns:1fr}
+  .row__side{justify-content:space-between}
+  .row__body dl{grid-template-columns:1fr;gap:3px}
+  .row__body dt{margin-top:8px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+  <header class="mast">
+    <p class="eyebrow">Prepared for Skyvern · 4 November 2026</p>
+    <h1>25 ops owners, verified by hand</h1>
+    <p class="sub">Insurance brokers and MGAs working across carrier portals, and freight
+      brokers and 3PLs running shipper check-ins. One operations owner per company, each
+      with a verified address, a confidence call, and the evidence behind it.</p>
+    <div class="meta">
+      <span><b>Scope</b> mid-market US</span>
+      <span><b>Target role</b> VP or Director of Operations</span>
+      <span><b>Built by</b> Carter Birky</span>
+    </div>
+  </header>
+
+  <dl class="strip">
+    <div class="cell"><dt>Companies</dt><dd>25</dd></div>
+    <div class="cell"><dt>Named owner</dt><dd>25<small>/ 25</small></dd></div>
+    <div class="cell"><dt>Address verified</dt><dd>24<small>/ 25</small></dd></div>
+    <div class="cell cell--flag"><dt>Flagged soft</dt><dd>1</dd></div>
+    <div class="cell cell--catch"><dt>Traps caught</dt><dd>3</dd></div>
+  </dl>
+
+  <div class="sec-h"><h2>What a scraped list would have gotten wrong</h2></div>
+  <p class="sec-note">Three failures in this set would have passed a normal verification
+    pass. Each one changed a row in the list below.</p>
+  <div class="finds">
+      <article class="find">
+        <header>
+          <span class="find__n">01</span>
+          <div>
+            <h3>Dead mailbox behind a catch-all domain</h3>
+            <p class="find__co">Patriot Growth Insurance Services</p>
+          </div>
+        </header>
+        <p>Patriot named a new COO on 27 October, eight days before this list. His mailbox does not exist yet. The domain answers as catch-all, so most verification tools pass any address on it through as accept-all and the send lands nowhere.</p>
+        <ul class="pfs"><li class="pf pf--bad"><code>rjain@patriotgis.com</code><span>mailbox not found</span></li><li class="pf pf--good"><code>tcameron@patriotgis.com</code><span>valid</span></li><li class="pf pf--good"><code>mday@patriotgis.com</code><span>valid</span></li><li class="pf pf--good"><code>gparker@patriotgis.com</code><span>valid</span></li></ul>
+        <p class="find__close">Three confirmed addresses on the same server resolve and his does not, so the house format is right and the box is genuinely unprovisioned. The row carries their VP of Operations instead.</p>
+      </article>
+      <article class="find">
+        <header>
+          <span class="find__n">02</span>
+          <div>
+            <h3>Three contacts had already left</h3>
+            <p class="find__co">Patriot Growth · High Street · Keystone</p>
+          </div>
+        </header>
+        <p>Every one of these would have looked live on a scraped list. Each was caught by checking the seat rather than the address.</p>
+        <ul class="pfs"><li class="pf pf--bad"><code>Darryl Siry</code><span>left Patriot in May 2026 for his own firm</span></li><li class="pf pf--bad"><code>Scott Goodreau</code><span>retired; LinkedIn reads Retired Insurance Executive</span></li><li class="pf pf--bad"><code>Sandeep Gupta</code><span>left Keystone in 2023, now CCO at Carisk Partners</span></li></ul>
+        <p class="find__close">No successor COO exists publicly at any of the three, so each row went a level down to the working ops owner.</p>
+      </article>
+      <article class="find">
+        <header>
+          <span class="find__n">03</span>
+          <div>
+            <h3>Staff mail on a different domain from the website</h3>
+            <p class="find__co">PLS Logistics Services</p>
+          </div>
+        </header>
+        <p>Their public site is plslogistics.com. Staff mail routes somewhere else. Send to the public domain and every contact at the company fails in one pass, which also degrades the sending domain for everything after it.</p>
+        <ul class="pfs"><li class="pf pf--bad"><code>plslogistics.com</code><span>public website</span></li><li class="pf pf--good"><code>pghlogistics.com</code><span>where staff mail actually routes</span></li></ul>
+        <p class="find__close">Verified separately from the address itself. This is why the mail domain is its own column in the file.</p>
+      </article></div>
+
+  <div class="sec-h"><h2>The queue</h2><span id="shown"></span></div>
+  <p class="sec-note">Every row opens to its evidence: how the contact was confirmed,
+    what was ruled out, and where the judgment is soft.</p>
+
+  <div class="ctrls">
+    <div class="chips" id="chips">
+      <button class="chip" data-f="all" aria-pressed="true">All</button>
+      <button class="chip" data-f="ins" aria-pressed="false">Insurance</button>
+      <button class="chip" data-f="frt" aria-pressed="false">Freight</button>
+      <button class="chip" data-f="soft" aria-pressed="false">Needs a look</button>
+    </div>
+    <input id="q" type="search" placeholder="filter by company, name or domain" autocomplete="off">
+  </div>
+  <p class="count" id="count"></p>
+  <ul class="queue" id="queue"></ul>
+
+  <section class="method">
+    <h2>How each row was built</h2>
+    <ol>
+      <li>Find the operations owner, not a generic contact or whoever sits highest on the
+        org chart.</li>
+      <li>Confirm the person still holds the seat. Three did not, and all three were
+        replaced rather than dropped.</li>
+      <li>Resolve the mail domain separately from the address, because a company's staff
+        mail does not always run on its public website.</li>
+      <li>Verify the mailbox itself, and treat a catch-all domain as unproven rather than
+        valid.</li>
+      <li>Rate the confidence and write down what would make it wrong.</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <b>Carter Birky</b> · (719) 510-6637 · the same 25 rows are attached as CSV
+  </div>
+</div>
+
+<script>
+const DATA = [{"co": "Foundation Risk Partners", "vert": "ins", "vertLabel": "Insurance rollup", "name": "John Turner", "title": "Chief Operating Officer", "email": "jturner@foundationrp.com", "domain": "foundationrp.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Verified", "how": "Apollo Nov 2026", "note": ""}, {"co": "World Insurance Associates", "vert": "ins", "vertLabel": "Insurance rollup", "name": "Michele Stoebling", "title": "Head of Acquisition Integration", "email": "michelestoebling@worldinsurance.com", "domain": "worldinsurance.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Verified", "how": "Apollo Nov 2026", "note": "Owns integrating acquired agencies and their carrier portal stacks. Alt: Andrea Paris, COO."}, {"co": "Patriot Growth Insurance Services", "vert": "ins", "vertLabel": "Insurance rollup", "name": "Greg Parker", "title": "Vice President of Operations", "email": "gparker@patriotgis.com", "domain": "patriotgis.com", "sk": "ok2", "sLabel": "Verified (source)", "tier": "good", "tierLabel": "Strong fit", "how": "Apollo Nov 2026", "note": "Most-worked row on this list. Darryl Siry, the COO named in most public sources, left in May 2026 for his own firm. Patriot named Rajeev Jain COO on 27 Oct 2026 (ex-COO US Benefit Services, Gallagher) - he is the strategic target, but has no mailbox yet: rjain@patriotgis.com returns mailbox_not_found while tcameron@, mday@ and gparker@ on the same server resolve. Four confirmed addresses here show the house format is initial+lastname, so that is a genuinely unprovisioned box, not a format miss. WORTH NOTING: the domain reports as catch-all, so most verification tools would pass rjain@ through as accept-all and the send would land nowhere. Parker is the deliverable contact and the closest title match to a company-wide ops owner. Alts, both verified: Mindy Day, Director of EB Systems Operations, mday@patriotgis.com - narrower (employee benefits) but her remit is literally systems operations, ex-AssuredPartners Regional Director of EB Operations. And Kerrie Koestner, Market EVP Operations, kerrie.koestner@patriotgis.com - the one address on firstname.lastname, so a second format does exist here."}, {"co": "Oakbridge Insurance Agency", "vert": "ins", "vertLabel": "Insurance rollup", "name": "John Ledyard", "title": "Chief Operating Officer", "email": "jledyard@oakbridgeinsurance.com", "domain": "oakbridgeinsurance.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Verified", "how": "Apollo Nov 2026", "note": "Former Higginbotham exec."}, {"co": "Alkeme", "vert": "ins", "vertLabel": "Insurance rollup", "name": "Nathan Morris", "title": "Chief Operating Officer", "email": "nmorris@alkemeins.com", "domain": "alkemeins.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Verified", "how": "Apollo Nov 2026", "note": ""}, {"co": "Lawley", "vert": "ins", "vertLabel": "Insurance retail", "name": "Reggie Dejean", "title": "Director of Operations", "email": "rdejean@lawleyinsurance.com", "domain": "lawleyinsurance.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Verified", "how": "Apollo Nov 2026", "note": "Role newly created for him."}, {"co": "Inszone Insurance Services", "vert": "ins", "vertLabel": "Insurance rollup", "name": "Colleen O'Hara", "title": "VP of Strategic Transformation", "email": "cohara@inszoneins.com", "domain": "inszoneins.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Verified", "how": "Pattern + ZeroBounce Nov 2026", "note": "No LinkedIn or public contact. Address derived from two confirmed company examples (first initial + last name) and confirmed valid by ZeroBounce: Microsoft 365, MX present, not catch-all. Transformation remit = systems and automation buyer."}, {"co": "High Street Insurance Partners", "vert": "ins", "vertLabel": "Insurance rollup", "name": "Donna Lagoy, CPCU, AIDA, AIT, ACE", "title": "SVP, Business Systems & Retail Operations", "email": "dlagoy@hsip.com", "domain": "hsip.com", "sk": "ok", "sLabel": "Verified", "tier": "top", "tierLabel": "Strongest fit", "how": "Explorium Nov 2026", "note": "Scott Goodreau (prior COO on this list) is retired - LinkedIn reads \"Retired Insurance Executive.\" No COO successor exists, so went a level down to the ops owner. Lagoy is a better fit than the seat she replaces: former President and COO of her own P&C agency, then Director of Acquisition-Application Data Intelligence at Highstreet, chaired its agency automation task force, and sits on its membership and operations council. Associate degree in insurance technology. CPCU, AIDA, AIT, ACE. Skills list enterprise software, interfaces, real time, process improvement. Alt at same company: Benjamin Winge, Director Technology Operations, bwinge@hsip.com, valid - but pure IT infrastructure, would evaluate not champion."}, {"co": "Keystone Agency Partners", "vert": "ins", "vertLabel": "Insurance rollup", "name": "Katie Settles", "title": "Head of Transformation", "email": "ksettles@keystoneagencypartners.com", "domain": "keystoneagencypartners.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Strong fit", "how": "Explorium Nov 2026", "note": "Sandeep Gupta (prior COO on this list) left in 2023, now Chief Commercial Officer at Carisk Partners - wrong company and a revenue role. No COO successor; the VP Ops posting is open. Settles holds the transformation remit and was VP Operations at PointeNorth Insurance Group 2021-2024; her history also carries a COO title. Commercial lines underwriting background, change management. CAVEAT: her mail routes on keystoneagencypartners.com while the company record shows mykeystone.com - flagging because Keystone Insurers Group and Keystone Agency Partners are related but distinct entities and the records may be conflated."}, {"co": "Insurance Office of America", "vert": "ins", "vertLabel": "Insurance retail", "name": "Alina Prior", "title": "Director of Operations", "email": "alina.prior@ioausa.com", "domain": "ioausa.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Resolved", "how": "Explorium Nov 2026", "note": "Mixed history (healthcare recruiting, loan processing) but P&C and ops-mgmt skills."}, {"co": "Relation Insurance", "vert": "ins", "vertLabel": "Insurance rollup", "name": "Kasey Flanary", "title": "Director, Employee Benefits Operations", "email": "kasey.flanary@relationinsurance.com", "domain": "relationinsurance.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Resolved", "how": "Explorium Nov 2026", "note": "Benefits ops specifically, narrower than company-wide ops."}, {"co": "The Hilb Group", "vert": "ins", "vertLabel": "Insurance rollup", "name": "Erica Mitchell", "title": "Director of Operations", "email": "emitchell@hilbgroup.com", "domain": "hilbgroup.com", "sk": "warn", "sLabel": "Catch-all, may bounce", "tier": "soft", "tierLabel": "Weak", "how": "Explorium Nov 2026", "note": "Two flags: catch-all domain may bounce, and SHRM-CP cert suggests HR ops not business ops."}, {"co": "Cross Insurance", "vert": "ins", "vertLabel": "Insurance retail", "name": "Richard Chapman", "title": "Senior Director, IT Operations", "email": "richard.chapman@crossagency.com", "domain": "crossagency.com", "sk": "ok", "sLabel": "Verified", "tier": "soft", "tierLabel": "Evaluator, not champion", "how": "Explorium Nov 2026", "note": "Family-owned, no public COO exists. Pure IT infrastructure career (Cisco, data center, ITIL). Would evaluate, not champion."}, {"co": "Trinity Logistics", "vert": "frt", "vertLabel": "Freight broker", "name": "Hayley Dobson", "title": "SVP of Operations", "email": "hayley.dobson@trinitylogistics.com", "domain": "trinitylogistics.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Verified", "how": "Apollo Nov 2026", "note": ""}, {"co": "BlueGrace Logistics", "vert": "frt", "vertLabel": "Freight broker", "name": "Adam Blankenship", "title": "COO and President of Managed Logistics", "email": "ablankenship@bluegracegroup.com", "domain": "bluegracegroup.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Verified", "how": "Apollo Nov 2026", "note": "2022 source confirmed current - no movement."}, {"co": "PLS Logistics Services", "vert": "frt", "vertLabel": "Freight broker", "name": "Joe Bielawski", "title": "Chief Operating Officer", "email": "jbielawski@pghlogistics.com", "domain": "pghlogistics.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Verified", "how": "Apollo Nov 2026", "note": "Mail routes on pghlogistics.com (Pittsburgh corporate entity), not plslogistics.com."}, {"co": "England Logistics", "vert": "frt", "vertLabel": "Freight broker", "name": "Shaun Beardall", "title": "President", "email": "sbeardall@englandlogistics.com", "domain": "englandlogistics.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Verified", "how": "Pattern + ZeroBounce Nov 2026", "note": "Pattern confirmed against rlavigne@englandlogistics.com, then ZeroBounce confirmed valid: Microsoft 365, MX present, not catch-all. Fallback contact - active VP of Operations posting means the ops seat may be open."}, {"co": "Axle Logistics", "vert": "frt", "vertLabel": "Freight broker", "name": "Dylan Dameron", "title": "Vice President of Operations", "email": "dylan.dameron@axlelogistics.com", "domain": "axlelogistics.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Verified", "how": "Apollo Nov 2026", "note": "Oversees split modal ops, carrier compliance, pricing. Exact-fit title."}, {"co": "Integrity Express Logistics", "vert": "frt", "vertLabel": "Freight broker", "name": "Thomas Quinones", "title": "Head of Logistics & Distribution", "email": "thomas.quinones@intxlog.com", "domain": "intxlog.com", "sk": "ok", "sLabel": "Verified", "tier": "soft", "tierLabel": "Check before sending", "how": "Explorium Nov 2026", "note": "Title says logistics but entire work history is healthcare credentialing (HIPAA, provider relations). Check LinkedIn before sending."}, {"co": "Circle Logistics", "vert": "frt", "vertLabel": "Freight broker", "name": "Derek Holst", "title": "Senior Vice President", "email": "derekh@circledelivers.com", "domain": "circledelivers.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Verified", "how": "Apollo Nov 2026", "note": "Runs daily ops at Fort Wayne HQ, 350 of 624 employees. Alt: Andrew Smith, SVP, implements carrier-communication tech."}, {"co": "Beemac Logistics", "vert": "frt", "vertLabel": "Freight broker", "name": "Kevin Mudd", "title": "VP Port Services & Truck Operations", "email": "kmudd@beemac.com", "domain": "beemac.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Strong fit", "how": "Explorium Nov 2026", "note": "Career freight ops exec: terminal mgr, dir ops & quality, GM port services. Covers both Beemac entities (shared domain)."}, {"co": "Giltner Logistics", "vert": "frt", "vertLabel": "Freight broker", "name": "Anthony Cleveland", "title": "Sr. VP of Sales and Operations", "email": "acleveland@giltner.com", "domain": "giltner.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Verified", "how": "Apollo Nov 2026", "note": "theorg profile was unverified; Apollo confirms."}, {"co": "Magellan Transport Logistics", "vert": "frt", "vertLabel": "Freight broker", "name": "Ryan Kunze", "title": "Director of Logistics", "email": "rkunze@magellantransportlogistics.com", "domain": "magellantransportlogistics.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Resolved", "how": "Explorium Nov 2026", "note": "Previously an open gap: no ops executive exists publicly and Kip Douglass is Director of Sales, wrong function. Resolved by targeting the stated role instead of an executive seat. Kunze has run logistics here since Dec 2019; before that Director of Logistics Services at Crowley Maritime and logistics ops at NYK. 3PL, transportation management, truckload, LTL, ocean. Alt: Mark Ramsey, also Director of Logistics - but his mail returns on magellanlogistics.com, a different domain from the company site, so treat that address as unconfirmed until the entity is checked."}, {"co": "Steam Logistics", "vert": "frt", "vertLabel": "Freight broker", "name": "Britney Keown", "title": "Sr. Manager, Brokerage Operations", "email": "britney.keown@steamlogistics.com", "domain": "steamlogistics.com", "sk": "ok", "sLabel": "Verified", "tier": "top", "tierLabel": "Strongest fit", "how": "Explorium Nov 2026", "note": "Drayage ops to sr ops mgr to sr mgr brokerage operations. Brokerage ops is exactly the carrier-portal work Skyvern automates."}, {"co": "MegaCorp Logistics", "vert": "frt", "vertLabel": "Freight broker", "name": "Jim Sanders", "title": "Corporate Operations Director", "email": "jsanders@megacorplogistics.com", "domain": "megacorplogistics.com", "sk": "ok", "sLabel": "Verified", "tier": "good", "tierLabel": "Resolved", "how": "Explorium Nov 2026", "note": "USMC EOD then logistics career. Coherent 3PL background."}];
+const q = document.getElementById('q');
+const queue = document.getElementById('queue');
+const countEl = document.getElementById('count');
+const shownEl = document.getElementById('shown');
+let filter = 'all';
+
+const esc = s => String(s).replace(/[&<>"']/g, c => (
+  {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function match(d) {
+  if (filter === 'ins' && d.vert !== 'ins') return false;
+  if (filter === 'frt' && d.vert !== 'frt') return false;
+  if (filter === 'soft' && !(d.tier === 'soft' || d.sk === 'warn')) return false;
+  const t = q.value.trim().toLowerCase();
+  if (!t) return true;
+  return (d.co + ' ' + d.name + ' ' + d.title + ' ' + d.email).toLowerCase().includes(t);
+}
+
+function render() {
+  const list = DATA.filter(match);
+  countEl.textContent = list.length + ' of ' + DATA.length + ' shown';
+  shownEl.textContent = DATA.length + ' companies';
+  if (!list.length) {
+    queue.innerHTML = '<li class="empty">Nothing matches that filter.</li>';
+    return;
+  }
+  queue.innerHTML = list.map(d => `
+    <li><details class="row">
+      <summary class="row__btn">
+        <div class="row__main">
+          <div class="row__co">${esc(d.co)} <span class="vert">${esc(d.vertLabel)}</span></div>
+          <div class="row__who"><b>${esc(d.name)}</b> · ${esc(d.title)}</div>
+          <div class="row__mail">${esc(d.email)}</div>
+        </div>
+        <div class="row__side">
+          <span class="pill pill--${d.sk}">${esc(d.sLabel)}</span>
+          <span class="caret">&#9656;</span>
+        </div>
+      </summary>
+      <div class="row__body">
+        <dl>
+          <dt>Confidence</dt><dd class="tier tier--${d.tier}">${esc(d.tierLabel)}</dd>
+          <dt>Mail domain</dt><dd><b>${esc(d.domain)}</b></dd>
+          <dt>Confirmed via</dt><dd>${esc(d.how)}</dd>
+        </dl>
+        ${d.note ? `<p class="note">${esc(d.note)}</p>` : ''}
+      </div>
+    </details></li>`).join('');
+}
+
+document.getElementById('chips').addEventListener('click', e => {
+  const b = e.target.closest('.chip');
+  if (!b) return;
+  filter = b.dataset.f;
+  [...document.querySelectorAll('.chip')].forEach(c =>
+    c.setAttribute('aria-pressed', String(c === b)));
+  render();
+});
+q.addEventListener('input', render);
+render();
+</script>
+
+</body>
+</html>
