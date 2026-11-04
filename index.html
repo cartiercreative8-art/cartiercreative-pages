@@ -35,7 +35,12 @@
   .btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.22)}
   .btn.ghost:hover{background:rgba(255,255,255,.07)}
   footer{padding:24px 20px;border-top:1px solid rgba(255,255,255,.12)}
-  footer p{max-width:40rem;margin:0 auto;font-size:.8125rem;color:#a9b6c2}
+  footer .inner{max-width:40rem;margin:0 auto;display:flex;flex-wrap:wrap;
+                gap:6px 16px;align-items:baseline;justify-content:space-between}
+  footer p{font-size:.8125rem;color:#a9b6c2}
+  footer nav{display:flex;gap:16px}
+  footer a{font-size:.8125rem;color:#a9b6c2;text-decoration:none}
+  footer a:hover{color:#f07a45;text-decoration:underline}
 </style>
 </head>
 <body>
@@ -63,7 +68,13 @@
   </div>
 </main>
 <footer>
-  <p>Cartier Creative. Customer systems for Colorado trades. Colorado Springs, CO.</p>
+  <div class="inner">
+    <p>Cartier Creative. Customer systems for Colorado trades. Colorado Springs, CO.</p>
+    <nav>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </nav>
+  </div>
 </footer>
 </body>
 </html>
