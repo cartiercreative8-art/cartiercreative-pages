@@ -67,7 +67,7 @@ button{font:inherit;color:inherit}
 .hero{position:relative;min-height:100svh;padding:104px 0 64px;display:flex;align-items:center;overflow:hidden;isolation:isolate}
 .hero::before{content:"";position:absolute;inset:-20% -10% auto;height:90%;z-index:-1;background:radial-gradient(50% 50% at 50% 40%,rgba(212,176,106,.12),transparent 70%)}
 .hero .wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
-.emblem{position:relative;width:min(520px,88vw);aspect-ratio:560/290;margin-bottom:22px}
+.emblem{position:relative;width:min(520px,88vw);aspect-ratio:560/222;margin-bottom:22px}
 .emblem svg{width:100%;height:100%;overflow:visible}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--mute)}
 .eyebrow .pip{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2.4s infinite}
@@ -88,10 +88,6 @@ button{font:inherit;color:inherit}
 .cca .fillL{fill:url(#letterFill);stroke:none;opacity:0;animation:fadein 1.2s ease 1.2s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fadein{to{opacity:1}}
-.walker{opacity:0}
-.ledge{stroke-dasharray:560;stroke-dashoffset:560;animation:draw 1.4s var(--ease) .5s forwards}
-.eye{opacity:0;animation:eye 5s ease 1.6s infinite}
-@keyframes eye{0%{opacity:0}8%,88%{opacity:1}91%,93%{opacity:.05}96%,100%{opacity:1}}
 .baseline{stroke-dasharray:560;stroke-dashoffset:560;animation:draw 1.2s var(--ease) 2.3s forwards}
 
 section{position:relative;padding:120px 0}
@@ -348,45 +344,16 @@ footer a:hover{color:var(--gold)}
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
       <div class="emblem" aria-hidden="true">
-        <svg viewBox="0 -40 560 290" class="cca">
+        <svg viewBox="0 20 560 222" class="cca">
           <defs>
             <linearGradient id="letterFill" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0" stop-color="#f3efe6" stop-opacity=".14"/><stop offset="1" stop-color="#f3efe6" stop-opacity=".02"/>
-            </linearGradient>
-            <linearGradient id="fur" x1="0" y1="28" x2="0" y2="150" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#3b3833"/><stop offset=".22" stop-color="#1b1b1d"/><stop offset="1" stop-color="#09090a"/>
-            </linearGradient>
-            <linearGradient id="rim" x1="0" y1="26" x2="0" y2="80" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#d4b06a" stop-opacity=".85"/><stop offset="1" stop-color="#d4b06a" stop-opacity="0"/>
-            </linearGradient>
-            <pattern id="ros" width="16" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-6)">
-              <circle cx="5" cy="5" r="2.8" fill="none" stroke="#45413a" stroke-width="1.2" stroke-dasharray="3.4 2"/>
-              <circle cx="13" cy="11" r="2.4" fill="none" stroke="#45413a" stroke-width="1.1" stroke-dasharray="3 1.8"/>
-            </pattern>
-            <linearGradient id="sheenG" x1="0" x2="1">
-              <stop offset="0" stop-color="#d4b06a" stop-opacity="0"/><stop offset=".5" stop-color="#d4b06a" stop-opacity=".2"/><stop offset="1" stop-color="#d4b06a" stop-opacity="0"/>
-            </linearGradient>
-            <linearGradient id="fur2" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#3a3731"/><stop offset=".3" stop-color="#19191b"/><stop offset="1" stop-color="#080809"/>
-            </linearGradient>
-            <linearGradient id="rim2" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#d4b06a" stop-opacity=".8"/><stop offset=".45" stop-color="#d4b06a" stop-opacity="0"/>
             </linearGradient>
           </defs>
           <text class="fillL" x="0" y="218">C</text><text class="draw" x="0" y="218">C</text>
           <text class="fillL" x="186" y="218">C</text><text class="draw" x="186" y="218">C</text>
           <text class="fillL" x="378" y="218">A</text><text class="draw" x="378" y="218">A</text>
           <line class="baseline" x1="0" y1="232" x2="560" y2="232" stroke="rgba(212,176,106,.35)" stroke-width="1"/>
-          <line class="ledge" x1="0" y1="33" x2="560" y2="33" stroke="rgba(212,176,106,.35)" stroke-width="1"/>
-          <g class="walker" id="walker" transform="translate(240 33)">
-            <g id="wBody">
-              <path id="wTail" fill="none" stroke="#0c0c0d" stroke-width="4.2" stroke-linecap="round"/>
-              <g id="farLegs" fill="none" stroke="#050506" stroke-linecap="round" stroke-linejoin="round"></g>
-              <path id="wTorso" fill="url(#fur2)" stroke="url(#rim2)" stroke-width="1.1" d="M-52 -43.0 C-51 -51.0 -41 -55.0 -28 -54.0 C-10 -52.0 6 -50.0 20 -52.0 C30 -54.0 41 -53.0 49 -49.0 C53 -47.0 57 -47.0 61 -49.0 C62 -53.0 66 -54.0 68 -50.0 C72 -49.0 76 -46.0 78 -42.0 C79 -39.0 77 -37.0 74 -37.0 C69 -36.0 63 -36.0 59 -38.0 C53 -36.0 45 -32.0 38 -28.0 C30 -26.0 20 -28.0 10 -30.0 C-6 -31.0 -24 -31.0 -37 -30.0 C-46 -30.0 -53 -35.0 -52 -43.0 Z"/>
-              <g id="nearLegs" fill="none" stroke="#141416" stroke-linecap="round" stroke-linejoin="round"></g>
-              <ellipse class="eye" cx="71" cy="-45" rx="1.7" ry=".9" fill="#e6c27a"/>
-            </g>
-          </g>
         </svg>
       </div>
 
@@ -751,57 +718,6 @@ footer a:hover{color:var(--gold)}
 </footer>
 
 <script>
-  /* Panther walk: two-bone legs with planted paws, walks from the second C and stops at the end of the A */
-  (function(){
-    var W=document.getElementById('walker'); if(!W) return;
-    var NS='http://www.w3.org/2000/svg', body=document.getElementById('wBody'), tail=document.getElementById('wTail');
-    function mk(g,w1,w2){var a=document.createElementNS(NS,'path'),b=document.createElementNS(NS,'path'),p=document.createElementNS(NS,'ellipse');
-      a.setAttribute('stroke-width',w1);b.setAttribute('stroke-width',w2);p.setAttribute('rx',3.4);p.setAttribute('ry',1.6);p.setAttribute('fill',g.getAttribute('stroke'));
-      g.appendChild(a);g.appendChild(b);g.appendChild(p);return [a,b,p];}
-    var far=document.getElementById('farLegs'), near=document.getElementById('nearLegs');
-    // root x,y ; bone lengths ; bend side ; phase offset ; group
-    var legs=[
-      {x:-36,y:-38,a:23,b:22,s:1,h:1,o:.5, el:mk(far,8,4.2)},
-      {x:32,y:-36,a:20,b:19,s:1,o:.75, el:mk(far,6.5,3.8)},
-      {x:-36,y:-38,a:23,b:22,s:1,h:1,o:0, el:mk(near,9,4.8)},
-      {x:32,y:-36,a:20,b:19,s:1,o:.25, el:mk(near,7.5,4.4)}
-    ];
-    var L=26, beta=.64, T=1.05, v=L/(beta*T), x0=240, x1=468;
-    function foot(p){ if(p<beta) return [L/2-L*(p/beta),0];
-      var s=(p-beta)/(1-beta), e=s*s*(3-2*s); return [-L/2+L*e,-5.5*Math.sin(Math.PI*s)]; }
-    function ik(l,fx,fy){var dx=fx-l.x,dy=fy-l.y,d=Math.min(Math.hypot(dx,dy),l.a+l.b-.01),t=Math.atan2(dy,dx),
-      al=Math.acos(Math.max(-1,Math.min(1,(l.a*l.a+d*d-l.b*l.b)/(2*l.a*d)))),j=t+l.s*al;return [l.x+l.a*Math.cos(j),l.y+l.a*Math.sin(j)];}
-    function draw(ph,bl,bob,tw){
-      legs.forEach(function(l){var f=foot((ph+l.o)%1); var fx=l.x+(1-bl)*f[0]+ (l.h?4:-1), fy=-bob+(1-bl)*f[1];
-        var k=ik(l,fx,fy); l.el[0].setAttribute('d','M'+l.x+' '+l.y+'L'+k[0].toFixed(2)+' '+k[1].toFixed(2));
-        l.el[1].setAttribute('d','M'+k[0].toFixed(2)+' '+k[1].toFixed(2)+'L'+fx.toFixed(2)+' '+(fy-1.5).toFixed(2));
-        l.el[2].setAttribute('cx',(fx+2).toFixed(2));l.el[2].setAttribute('cy',(fy-.6).toFixed(2));});
-      body.setAttribute('transform','translate(0 '+bob.toFixed(2)+')');
-      var w=Math.sin(tw)*5, w2=Math.sin(tw-1.1)*7;
-      tail.setAttribute('d','M-50 -45 C-66 -42 -74 -26 -80 '+(-12+w*.3).toFixed(1)+' C-85 '+(-4+w*.4).toFixed(1)+' -96 '+(-6+w2*.3).toFixed(1)+' -101 '+(-15+w2).toFixed(1));
-    }
-    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduce){W.setAttribute('transform','translate('+x1+' 33)');draw(0,1,0,0);W.style.opacity=1;return;}
-    var start=null, delay=1300, walkDur=(x1-x0)/v*1000, ph=0, last=null, settle=0;
-    draw(0,0,0,0);
-    function tick(now){
-      if(start===null){start=now;last=now;}
-      var t=now-start-delay, dt=Math.min(50,now-last)/1000; last=now;
-      if(t<0){requestAnimationFrame(tick);return;}
-      var u=Math.min(1,t/walkDur), x, sp;
-      // ease out over the last 18% so it slows to a stop
-      var k=.82; x = u<k ? u/(k+(1-k)/2) : (k+(1-k)/2-(1-u)*(1-u)/(2*(1-k)))/(k+(1-k)/2);
-      sp = u<k ? 1 : (1-u)/(1-k);
-      ph=(ph+dt/T*sp)%1;
-      if(u>=1) settle=Math.min(1,settle+dt/.45);
-      var bl=Math.max(settle, u<k?0:Math.pow((u-k)/(1-k),2));
-      W.style.opacity=Math.min(1,t/450);
-      W.setAttribute('transform','translate('+(x0+(x1-x0)*x).toFixed(2)+' 33)');
-      draw(ph,bl,(1-bl)*.9*Math.sin(ph*4*Math.PI),now/1000*(1.4-.8*bl));
-      requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  })();
 
 (function(){
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
