@@ -181,6 +181,13 @@
   .live{display:flex;flex-direction:column;gap:10px;margin-top:4px}
   .live li{display:flex;justify-content:space-between;gap:12px;font-size:.9375rem;padding:10px 0;border-bottom:1px solid var(--edge)}
   .live li:last-child{border-bottom:0}
+  .card.audit{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .card.audit .kicker{color:var(--signal-lit)}
+  .card.audit p{color:var(--dim-lit)}
+  .card.audit .live li{border-color:rgba(255,255,255,.12);color:#fff}
+  .card.audit .live li::before{content:"";flex:0 0 7px;height:7px;margin-top:8px;border-radius:50%;background:var(--signal-lit)}
+  .card.audit .live li{justify-content:flex-start}
+  .card.audit .btn{margin-top:auto;align-self:flex-start}
   .live .on{font-family:var(--mono);font-size:.75rem;color:var(--ok);display:inline-flex;align-items:center;gap:6px}
   .live .on::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok)}
   @media (max-width:860px){.work-grid{grid-template-columns:1fr}}
@@ -331,7 +338,7 @@
     <div class="wrap">
       <p class="eyebrow mono">Pricing</p>
       <h2 id="pricing-title" class="h2 balance">Three plans. Monthly. Pick the one that fits how you work.</h2>
-      <p class="sub pretty">Every plan is set up for you. If you're not sure which one fits, call and we'll figure it out in ten minutes.</p>
+      <p class="sub pretty">Every plan is set up for you. Not sure which one fits? <a href="#audit" style="color:#f07a45">Start with a free audit.</a></p>
 
       <div class="tiers">
         <article class="tier">
@@ -342,7 +349,7 @@
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f07a45" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Missed-call text-back</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f07a45" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>CRM with instant lead alerts</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f07a45" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Quote request form</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f07a45" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>5-star review funnel</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f07a45" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>5-star Google review funnel</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f07a45" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Job pipeline</li>
           </ul>
           <a class="btn ghost" href="https://api.leadconnectorhq.com/widget/booking/nKwdftctGGdOVALb2mp9" target="_blank" rel="noopener">Start with Starter</a>
@@ -386,7 +393,7 @@
     <div class="wrap">
       <p class="eyebrow mono">Work</p>
       <h2 id="work-title" class="h2 balance">Built for shops like yours.</h2>
-      <p class="sub pretty">Real businesses, real systems. Ask on the call and you can see one working.</p>
+      <p class="sub pretty">Recent work, and a free way to see where your shop stands.</p>
 
       <div class="work-grid">
         <article class="card">
@@ -399,19 +406,18 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="card audit" id="audit">
           <div class="body">
-            <p class="kicker mono">Full system &middot; Handyman &middot; Colorado</p>
-            <h3>Measure Once Handyman</h3>
-            <p class="pretty">Jeremy Halladay runs it himself. His system is live and working right now.</p>
+            <p class="kicker mono">Free &middot; No commitment</p>
+            <h3>Not ready to buy? Start with a free audit.</h3>
+            <p class="pretty">I look at how your shop shows up and how your calls get handled. You get a short list of what's costing you jobs, whether you sign up or not.</p>
             <ul class="live">
-              <li>Missed-call text-back <span class="on">Live</span></li>
-              <li>Online booking <span class="on">Live</span></li>
-              <li>Google review requests <span class="on">Live</span></li>
-              <li>CRM and lead alerts <span class="on">Live</span></li>
-              <li>Follow-up texts and emails <span class="on">Live</span></li>
+              <li>Your Google profile and reviews</li>
+              <li>Your website, on a phone</li>
+              <li>What a caller gets when you can't pick up</li>
+              <li>How fast a new lead hears back</li>
             </ul>
-            <a class="go" href="https://api.leadconnectorhq.com/widget/booking/nKwdftctGGdOVALb2mp9" target="_blank" rel="noopener">Book a call to see it &rarr;</a>
+            <a class="btn" href="https://api.leadconnectorhq.com/widget/booking/nKwdftctGGdOVALb2mp9" target="_blank" rel="noopener">Book your free audit</a>
           </div>
         </article>
       </div>
@@ -454,6 +460,10 @@
           <p>It picks up when you can't. It asks what the customer needs, answers basic questions about your business, and books the job on your calendar. You get the details by text.</p>
         </details>
         <details>
+          <summary>What's the free audit?</summary>
+          <p>A 30-minute call. I look at your Google profile, your reviews, your website, and what happens when someone calls and you can't answer. You get a short list of what's costing you jobs. It's yours to keep, even if you never sign up.</p>
+        </details>
+        <details>
           <summary>Who sets it all up?</summary>
           <p>I do. You answer some questions about your business and your schedule. I build it, test it, and walk you through it before it goes live.</p>
         </details>
@@ -468,7 +478,7 @@
   <section class="final" aria-labelledby="final-title">
     <div class="wrap">
       <h2 id="final-title" class="h2 balance">The next call you miss is someone else's job.</h2>
-      <p class="pretty">Thirty minutes. We look at your calls and your numbers. You decide if it's worth it.</p>
+      <p class="pretty">Thirty minutes, free. I audit your calls, reviews, and website and show you the numbers. You decide if it's worth it.</p>
       <div class="cta">
         <a class="btn" href="https://api.leadconnectorhq.com/widget/booking/nKwdftctGGdOVALb2mp9" target="_blank" rel="noopener">Book a 30-minute call</a>
         <a class="btn ghost" href="tel:+17195106637">Call (719) 510-6637</a>
