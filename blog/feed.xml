@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Cartier Creative Field Notes</title>
+  <link>https://cartiercreativeco.com/blog/</link>
+  <description>Weekly notes for owner-run service businesses.</description>
+  <item>
+    <title>The small shop&#x27;s unfair advantage</title>
+    <link>https://cartiercreativeco.com/blog/small-shop-advantage/</link>
+    <guid>https://cartiercreativeco.com/blog/small-shop-advantage/</guid>
+    <pubDate>Tue, 24 Nov 2026 13:00:00 +0000</pubDate>
+    <description>The big outfits have call centers and ad budgets. You have something they can&#x27;t buy. Here&#x27;s how to use it.</description>
+  </item>
+  <item>
+    <title>The refrigerant deadline moved. Here&#x27;s the short version.</title>
+    <link>https://cartiercreativeco.com/blog/refrigerant-deadline-moved/</link>
+    <guid>https://cartiercreativeco.com/blog/refrigerant-deadline-moved/</guid>
+    <pubDate>Tue, 24 Nov 2026 13:00:00 +0000</pubDate>
+    <description>EPA dropped the January 2026 install deadline for older R-410A systems. What changed, what didn&#x27;t, and what to tell customers who ask.</description>
+  </item>
+  <item>
+    <title>The math on one missed call</title>
+    <link>https://cartiercreativeco.com/blog/missed-call-math/</link>
+    <guid>https://cartiercreativeco.com/blog/missed-call-math/</guid>
+    <pubDate>Tue, 24 Nov 2026 13:00:00 +0000</pubDate>
+    <description>Most owners guess low. Take five minutes with your own call log and see what voicemail really costs you.</description>
+  </item>
+</channel>
+</rss>
