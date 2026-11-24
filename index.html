@@ -88,16 +88,10 @@ button{font:inherit;color:inherit}
 .cca .fillL{fill:url(#letterFill);stroke:none;opacity:0;animation:fadein 1.2s ease 1.2s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fadein{to{opacity:1}}
-.leaper{opacity:0;offset-path:path("M -130 190 C 60 120, 270 115, 425 26");offset-rotate:auto;offset-distance:0%;
-  animation:leap 1.15s cubic-bezier(.45,.05,.4,1) 1.2s forwards}
-@keyframes leap{0%{opacity:0;offset-distance:0%}10%{opacity:1}88%{opacity:1}100%{opacity:0;offset-distance:100%}}
-.lier{opacity:0;transform-box:fill-box;transform-origin:50% 100%;animation:land .6s var(--ease) 2.25s forwards}
-@keyframes land{0%{opacity:0;transform:translateY(-6px) scaleY(.9)}60%{opacity:1;transform:translateY(1px) scaleY(.97)}100%{opacity:1;transform:none}}
-.eye{opacity:0;animation:eye 5s ease 2.9s infinite}
+.walker{opacity:0}
+.ledge{stroke-dasharray:560;stroke-dashoffset:560;animation:draw 1.4s var(--ease) .5s forwards}
+.eye{opacity:0;animation:eye 5s ease 1.6s infinite}
 @keyframes eye{0%{opacity:0}8%,88%{opacity:1}91%,93%{opacity:.05}96%,100%{opacity:1}}
-.rosettes{opacity:0;animation:fadein 1.6s ease 2.8s forwards}
-.sweep{animation:sweep 6s ease-in-out 3.2s infinite;transform:translateX(-160px)}
-@keyframes sweep{0%{transform:translateX(-160px)}45%,100%{transform:translateX(380px)}}
 .baseline{stroke-dasharray:560;stroke-dashoffset:560;animation:draw 1.2s var(--ease) 2.3s forwards}
 
 section{position:relative;padding:120px 0}
@@ -330,7 +324,6 @@ footer a:hover{color:var(--gold)}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .leaper{display:none}
   *,*::before,*::after{animation-duration:.001s!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
   .reveal{opacity:1;transform:none}
 }
@@ -373,23 +366,27 @@ footer a:hover{color:var(--gold)}
             <linearGradient id="sheenG" x1="0" x2="1">
               <stop offset="0" stop-color="#d4b06a" stop-opacity="0"/><stop offset=".5" stop-color="#d4b06a" stop-opacity=".2"/><stop offset="1" stop-color="#d4b06a" stop-opacity="0"/>
             </linearGradient>
-            <path id="pBody" d="M306 56 C304 46 296 38 288 37 C287 31 283 26 279 27 C275 28 274 34 274 40 C264 44 254 52 244 57 C218 61 186 62 160 62 C144 62 128 62 116 66 C104 70 98 80 100 90 C101 95 104 99 110 100 L304 100 C311 99 311 92 304 91 C288 90 272 90 262 89 C256 85 255 77 260 71 C266 66 276 66 286 67 C296 67 304 64 306 60 C307 59 307 57 306 56 Z M108 80 C96 92 90 112 92 132 C93 142 98 150 104 151 C109 151 110 146 106 144 C101 141 99 134 100 124 C101 108 106 96 114 88 Z"/>
-            <clipPath id="pClip"><use href="#pBody"/></clipPath>
+            <linearGradient id="fur2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3a3731"/><stop offset=".3" stop-color="#19191b"/><stop offset="1" stop-color="#080809"/>
+            </linearGradient>
+            <linearGradient id="rim2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#d4b06a" stop-opacity=".8"/><stop offset=".45" stop-color="#d4b06a" stop-opacity="0"/>
+            </linearGradient>
           </defs>
           <text class="fillL" x="0" y="218">C</text><text class="draw" x="0" y="218">C</text>
           <text class="fillL" x="186" y="218">C</text><text class="draw" x="186" y="218">C</text>
           <text class="fillL" x="378" y="218">A</text><text class="draw" x="378" y="218">A</text>
           <line class="baseline" x1="0" y1="232" x2="560" y2="232" stroke="rgba(212,176,106,.35)" stroke-width="1"/>
-          <g class="leaper"><path transform="scale(.42) translate(-175 -55)" fill="#121214" stroke="rgba(212,176,106,.55)" stroke-width="1.6" d="M330 44 C327 36 320 31 312 30 C310 24 306 20 302 21 C299 22 298 27 298 31 C280 30 250 26 220 28 C190 30 160 36 130 40 C118 42 108 44 100 46 C80 44 40 38 6 34 C0 34 -1 40 4 41 C40 46 76 52 96 56 C88 62 66 72 40 82 C32 85 34 93 42 90 C70 82 96 74 116 68 C128 70 140 72 152 70 C186 66 220 64 248 62 C272 64 306 68 344 70 C352 71 353 63 346 62 C318 58 296 54 286 52 C298 52 314 52 324 50 C330 49 332 46 330 44 Z"/></g>
-          <g transform="translate(308 -25) scale(.62)"><g class="lier">
-            <use href="#pBody" fill="url(#fur)"/>
-            <g clip-path="url(#pClip)">
-              <rect class="rosettes" x="80" y="20" width="240" height="140" fill="url(#ros)"/>
-              <rect class="sweep" x="-60" y="20" width="70" height="140" fill="url(#sheenG)"/>
+          <line class="ledge" x1="0" y1="33" x2="560" y2="33" stroke="rgba(212,176,106,.35)" stroke-width="1"/>
+          <g class="walker" id="walker" transform="translate(240 33)">
+            <g id="wBody">
+              <path id="wTail" fill="none" stroke="#0c0c0d" stroke-width="4.2" stroke-linecap="round"/>
+              <g id="farLegs" fill="none" stroke="#050506" stroke-linecap="round" stroke-linejoin="round"></g>
+              <path id="wTorso" fill="url(#fur2)" stroke="url(#rim2)" stroke-width="1.1" d="M-52 -43.0 C-51 -51.0 -41 -55.0 -28 -54.0 C-10 -52.0 6 -50.0 20 -52.0 C30 -54.0 41 -53.0 49 -49.0 C53 -47.0 57 -47.0 61 -49.0 C62 -53.0 66 -54.0 68 -50.0 C72 -49.0 76 -46.0 78 -42.0 C79 -39.0 77 -37.0 74 -37.0 C69 -36.0 63 -36.0 59 -38.0 C53 -36.0 45 -32.0 38 -28.0 C30 -26.0 20 -28.0 10 -30.0 C-6 -31.0 -24 -31.0 -37 -30.0 C-46 -30.0 -53 -35.0 -52 -43.0 Z"/>
+              <g id="nearLegs" fill="none" stroke="#141416" stroke-linecap="round" stroke-linejoin="round"></g>
+              <ellipse class="eye" cx="71" cy="-45" rx="1.7" ry=".9" fill="#e6c27a"/>
             </g>
-            <use href="#pBody" fill="none" stroke="url(#rim)" stroke-width="1.4"/>
-            <ellipse class="eye" cx="294" cy="50" rx="3" ry="1.4" fill="#e6c27a"/>
-          </g></g>
+          </g>
         </svg>
       </div>
 
@@ -754,6 +751,58 @@ footer a:hover{color:var(--gold)}
 </footer>
 
 <script>
+  /* Panther walk: two-bone legs with planted paws, walks from the second C and stops at the end of the A */
+  (function(){
+    var W=document.getElementById('walker'); if(!W) return;
+    var NS='http://www.w3.org/2000/svg', body=document.getElementById('wBody'), tail=document.getElementById('wTail');
+    function mk(g,w1,w2){var a=document.createElementNS(NS,'path'),b=document.createElementNS(NS,'path'),p=document.createElementNS(NS,'ellipse');
+      a.setAttribute('stroke-width',w1);b.setAttribute('stroke-width',w2);p.setAttribute('rx',3.4);p.setAttribute('ry',1.6);p.setAttribute('fill',g.getAttribute('stroke'));
+      g.appendChild(a);g.appendChild(b);g.appendChild(p);return [a,b,p];}
+    var far=document.getElementById('farLegs'), near=document.getElementById('nearLegs');
+    // root x,y ; bone lengths ; bend side ; phase offset ; group
+    var legs=[
+      {x:-36,y:-38,a:23,b:22,s:1,h:1,o:.5, el:mk(far,8,4.2)},
+      {x:32,y:-36,a:20,b:19,s:1,o:.75, el:mk(far,6.5,3.8)},
+      {x:-36,y:-38,a:23,b:22,s:1,h:1,o:0, el:mk(near,9,4.8)},
+      {x:32,y:-36,a:20,b:19,s:1,o:.25, el:mk(near,7.5,4.4)}
+    ];
+    var L=26, beta=.64, T=1.05, v=L/(beta*T), x0=240, x1=468;
+    function foot(p){ if(p<beta) return [L/2-L*(p/beta),0];
+      var s=(p-beta)/(1-beta), e=s*s*(3-2*s); return [-L/2+L*e,-5.5*Math.sin(Math.PI*s)]; }
+    function ik(l,fx,fy){var dx=fx-l.x,dy=fy-l.y,d=Math.min(Math.hypot(dx,dy),l.a+l.b-.01),t=Math.atan2(dy,dx),
+      al=Math.acos(Math.max(-1,Math.min(1,(l.a*l.a+d*d-l.b*l.b)/(2*l.a*d)))),j=t+l.s*al;return [l.x+l.a*Math.cos(j),l.y+l.a*Math.sin(j)];}
+    function draw(ph,bl,bob,tw){
+      legs.forEach(function(l){var f=foot((ph+l.o)%1); var fx=l.x+(1-bl)*f[0]+ (l.h?4:-1), fy=-bob+(1-bl)*f[1];
+        var k=ik(l,fx,fy); l.el[0].setAttribute('d','M'+l.x+' '+l.y+'L'+k[0].toFixed(2)+' '+k[1].toFixed(2));
+        l.el[1].setAttribute('d','M'+k[0].toFixed(2)+' '+k[1].toFixed(2)+'L'+fx.toFixed(2)+' '+(fy-1.5).toFixed(2));
+        l.el[2].setAttribute('cx',(fx+2).toFixed(2));l.el[2].setAttribute('cy',(fy-.6).toFixed(2));});
+      body.setAttribute('transform','translate(0 '+bob.toFixed(2)+')');
+      var w=Math.sin(tw)*5, w2=Math.sin(tw-1.1)*7;
+      tail.setAttribute('d','M-50 -45 C-66 -42 -74 -26 -80 '+(-12+w*.3).toFixed(1)+' C-85 '+(-4+w*.4).toFixed(1)+' -96 '+(-6+w2*.3).toFixed(1)+' -101 '+(-15+w2).toFixed(1));
+    }
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce){W.setAttribute('transform','translate('+x1+' 33)');draw(0,1,0,0);W.style.opacity=1;return;}
+    var start=null, delay=1300, walkDur=(x1-x0)/v*1000, ph=0, last=null, settle=0;
+    draw(0,0,0,0);
+    function tick(now){
+      if(start===null){start=now;last=now;}
+      var t=now-start-delay, dt=Math.min(50,now-last)/1000; last=now;
+      if(t<0){requestAnimationFrame(tick);return;}
+      var u=Math.min(1,t/walkDur), x, sp;
+      // ease out over the last 18% so it slows to a stop
+      var k=.82; x = u<k ? u/(k+(1-k)/2) : (k+(1-k)/2-(1-u)*(1-u)/(2*(1-k)))/(k+(1-k)/2);
+      sp = u<k ? 1 : (1-u)/(1-k);
+      ph=(ph+dt/T*sp)%1;
+      if(u>=1) settle=Math.min(1,settle+dt/.45);
+      var bl=Math.max(settle, u<k?0:Math.pow((u-k)/(1-k),2));
+      W.style.opacity=Math.min(1,t/450);
+      W.setAttribute('transform','translate('+(x0+(x1-x0)*x).toFixed(2)+' 33)');
+      draw(ph,bl,(1-bl)*.9*Math.sin(ph*4*Math.PI),now/1000*(1.4-.8*bl));
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  })();
+
 (function(){
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
